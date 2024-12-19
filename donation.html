@@ -23,7 +23,8 @@
             <nav class="container mx-auto flex justify-center items-center ">
                 <div class="navbar">
                   <div class="navbar-start">
-                    <a class="btn btn-ghost text-xl bg-[#B4F461]">Blog</a>
+                    <a  class="btn btn-ghost text-xl bg-[#B4F461]" onclick="goToPage('blog.html')" >Blog</a>
+                
                   </div>
                   <div class="navbar-center lg:flex">
                     <img class="mx-4 w-5 lg:w-10" src="./Img/logo.png" alt="Donate Bangladesh logo">
@@ -38,10 +39,10 @@
         </div>
         <!-- Navbar end -->
                <!-- button part start --> 
-               <div class="bg-white pt-16  container mx-auto flex justify-center items-center fixed top-20 left-0 right-0 backdrop-blur-sm  bg-opacity-5 bg-[#C7CBCE] z-50">
-                <button class="mx-7 text-lg btn bg-[#B4F461] ">Donation</button>
-                <button class="btn text-lg  ">History</button>
-              </div>  
+               <div class="bg-white pt-16 container mx-auto flex justify-center items-center fixed top-20 left-0 right-0 backdrop-blur-sm bg-opacity-5 bg-[#C7CBCE] z-50">
+                <button class="mx-7 text-lg btn" onclick="goToPage('donation.html')">Donation</button>
+                <button class="btn text-lg bg-[#B4F461]" onclick="goToPage('history.html')">History</button>
+            </div>  
                <!-- button part end--> 
 
 <!-- start card part -->
@@ -147,7 +148,11 @@
 
    
   
+<!-- footer section starts here -->
+<footer class="h-24 bg-[rgb(249,247,243)]">
 
+</footer>
 
+ <script src="./reuseble.js"></script>
 </body>
 </html>
