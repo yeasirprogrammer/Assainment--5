@@ -32,7 +32,7 @@
                   </div>
                   <div class="navbar-end">
                     <img class="mx-3" src="./Img/coin.png" alt="Coin icon">
-                    <span  class="text-lg lg:text-2xl font-bold">5500000BDT</span>
+                    <span  class="text-lg lg:text-2xl font-bold" id="balance"> 5500000BDT</span>
                   </div>
                 </div>
               </nav>
@@ -40,12 +40,13 @@
         <!-- Navbar end -->
                <!-- button part start --> 
                <div class="bg-white pt-16 container mx-auto flex justify-center items-center fixed top-20 left-0 right-0 backdrop-blur-sm bg-opacity-5 bg-[#C7CBCE] z-50">
-                <button class="mx-7 text-lg btn" onclick="goToPage('index.html')">Donation</button>
-                <button class="btn text-lg bg-[#B4F461]" onclick="goToPage('history.html')">History</button>
+                <button class="mx-7 text-lg btn bg-[#B4F461] " onclick="goToPage('index.html')">Donation</button>
+                <button class="btn text-lg " onclick="goToPage('history.html')">History</button>
             </div>  
                <!-- button part end--> 
-
+ 
 <!-- start card part -->
+ 
          <!-- card-01  -->
          <div class=" mt-40 card-01 container mx-auto flex justify-center items-center pt-20">
             <div class="card card-side bg-base-100 border border-[border-box]  grid  grid-cols-1 lg:grid-cols-2 ">
@@ -98,7 +99,7 @@
                         <div class="mt-4">
                             <input id="add-money-2" type="text" class="w-full h-[46px] border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B4F461]" placeholder="Write Donation Amount">
                             <br><br>
-                            <button id="donete-money-3" class="bg-[#B4F461] w-full h-[46px] hover:bg-white-700 font-bold rounded-[8px] btn">Donate Now</button>
+                            <button id="donete-money-2" class="bg-[#B4F461] w-full h-[46px] hover:bg-white-700 font-bold rounded-[8px] btn">Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -139,20 +140,32 @@
 
       </body>
       
-
-
-
-        
-
     </main>
 
-   
+
+   <!-- modal dialog starts here -->
+   <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box flex flex-col items-center">
+        <h1 class="font-bold mb-3 text-2xl sm:text-3xl lg:text-4xl ">Congrats!</h1>
+        <img src="./Img/coin.png" alt="">
+        <p class="pt-4 pb-1 md:pt-6 text-center">You Have Donated for Humankind</p>
+        <h3 class="font-bold text-base sm:text-xl lg:text-2xl">Successfully</h3>
+        <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn hover:bg-btn-color">Close Confirmation</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+<!-- modal dialog ends here -->
   
 <!-- footer section starts here -->
-<footer class="h-24 bg-[rgb(249,247,243)]">
+<footer class="h-24 bg-[#fceddb] opacity-30 pt-20">
 
 </footer>
 
  <script src="./Js/reuseble.js"></script>
+ <script src="./Js/funtion.js"></script>
 </body>
 </html>

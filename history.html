@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History</title>
+    <title>Donation History</title>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,19 +17,20 @@
 </head>
 <body>
         <!-- Navbar section -->
-        <div class="bg-[#fceddb] fixed mx-auto flex justify-center items-center pt-5 pb-9 fixed top-0 left-0 right-0 backdrop-blur-sm bg-opacity-40 z-50">
+        <div class="bg-[#fceddb] fixed mx-auto flex justify-center items-center pt-50 pb-9 fixed top-0 left-0 right-0 backdrop-blur-sm bg-opacity-40 z-50">
             <nav class="container mx-auto flex justify-center items-center ">
                 <div class="navbar">
                   <div class="navbar-start">
-                    <a  class="btn btn-ghost text-xl bg-[#B4F461]" onclick="goToPage('blog.html')" >Blog</a>
+                    <a class="btn btn-ghost text-xl bg-[#B4F461]" onclick="goToPage('blog.html')" >Blog</a>
                   </div>
+                  
                   <div class="navbar-center lg:flex">
                     <img class="mx-4 w-5 lg:w-10" src="./Img/logo.png" alt="Donate Bangladesh logo">
-                    <h1 class="font-bold text-sm lg:text-2xl">Donate Bangladesh</h1>
+                    <h1 class="font-bold text-sm lg:text-2xl ">Donate Bangladesh</h1>
                   </div>
                   <div class="navbar-end">
                     <img class="mx-3" src="./Img/coin.png" alt="Coin icon">
-                    <span  class="text-lg lg:text-2xl font-bold">5500000BDT</span>
+                    <span id="balance" class="text-lg lg:text-2xl font-bold">5500000BDT</span>
                   </div>
                 </div>
               </nav>
@@ -41,7 +42,44 @@
             <button class="mx-7 text-lg btn" onclick="goToPage('index.html')">Donation</button>
             <button class="btn text-lg bg-[#B4F461]" onclick="goToPage('history.html')">History</button>
         </div>  
+        <br> <br> <br> <br> <br>
+        <!-- history Section starts here -->
+        <section id="history-section" class="container mx-auto my-32 px-4">
+            <h2 class="text-2xl font-bold mb-4">Donation History</h2>
+            <div id="history-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+             
+            </div>
+        </section>
+        <!-- history Section ends here -->
 
-        <script src="./Js/reuseble.js"></script>
+        <script>
+          
+            document.addEventListener("DOMContentLoaded", function () {
+                const historyContainer = document.getElementById("history-container");
+                const history = JSON.parse(localStorage.getItem("donationHistory")) || [];
+
+                if (history.length === 0) {
+                    historyContainer.innerHTML = "<p>No donation history found.</p>";
+                } else {
+                    history.forEach(entry => {
+                        const historyCard = document.createElement("div");
+                        historyCard.className = "p-4 mb-4 bg-white rounded shadow text-center";
+                        historyCard.innerHTML = `
+                            <h3 class="font-bold text-lg">Donation Details</h3>
+                            <p><strong>Amount:</strong> ${entry.amount} BDT</p>
+                            <p><strong>Date:</strong> ${entry.date}</p>
+                            <p><strong>Time:</strong> ${entry.time}</p>
+                            <p><strong>Card:</strong> ${entry.card}</p>
+                        `;
+                        historyContainer.appendChild(historyCard);
+                    });
+                }
+            });
+
+           
+            function goToPage(page) {
+                window.location.href = page;
+            }
+        </script>
 </body>
 </html>
